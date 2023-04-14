@@ -19,7 +19,7 @@ function makeGrid(container, sideLength) {
 
 function getDimension() {
     let dim;
-    while(isNaN(dim = prompt("Grid dimension to resize to? (max 100)")) || +dim > 100) {}
+    while(isNaN(dim = prompt("Grid dimension to resize to? (max 100)")) || +dim > 100 || +dim < 1) {}
     return +dim;
 }
 
@@ -39,4 +39,3 @@ let resizeBtn = document.querySelector("#resize");
 resizeBtn.addEventListener("click", () => {
     makeGrid(grid, getDimension());
 });
-
